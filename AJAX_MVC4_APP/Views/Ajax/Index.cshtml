@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<h2>Index</h2>
+
+@Ajax.BeginForm("showDetails", "Ajax",
+                new AjaxOptions 
+                {
+                    HttpMethod="POST",
+                    UpdateTargetId="show", 
+                    InsertionMode= InsertionMode.Replace, 
+                    LoadingElementId="loading"
+                })
+<h1>Enter Product Information</h1>
+<h2>
+    Product Code: @Html.TextBox("txtCode")<br />
+    <input type="submit" value="Show Details" />
+    <input type="reset" value="Reset" />
+</h2>
+@{Html.EndForm();}
+<img src="~/Content/default.gif" id="loading" style="display:none"/>
+<div id="show"></div>
+

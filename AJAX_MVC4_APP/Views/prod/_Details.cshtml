@@ -1,0 +1,16 @@
+﻿@model AJAX_MVC4_APP.Models.Product
+
+@if (Model.ID == null)
+{
+    <h1>Invalid Product ID</h1>
+}
+else
+{
+    <h2>
+        Product ID: @Model.ID<br />
+        Product Name: @Model.Name <br />
+        Product Quantity: @Model.Quantity <br />
+        Product Price: @Model.Price <br />
+
+    </h2>
+}
